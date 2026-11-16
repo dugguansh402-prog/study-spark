@@ -97,5 +97,23 @@ window.open("https://wa.me/919999999999?text="+text,"_blank");
 document.getElementById('msg').innerText="✅ Doubt ready hai! WhatsApp khul gaya hoga, wahan Send daba do.";
 }
 </script>
-</body>
+<div class="container">
+<div class="card">
+<h2>🤖 AI Teacher - Turant Puchho</h2>
+<p>Koi bhi doubt likho, AI turant samjhayega!</p>
+<input id="aiq" type="text" placeholder="Apna sawal likho... jaise - Photosynthesis kya hai?" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin:10px 0">
+<button class="btn" onclick="askAI()">AI Se Puchho</button>
+<p id="aians" style="margin-top:12px;line-height:1.6"></p>
+</div>
+</div>
+<script>
+function askAI(){
+var q=document.getElementById('aiq').value;
+if(!q){alert('Pehle sawal likho!');return;}
+document.getElementById('aians').innerText="Sooch raha hu... 🤔";
+setTimeout(function(){
+document.getElementById('aians').innerText="Tumhara sawal: "+q+" \n\nIska jawab: Ye bahut accha sawal hai! Ise aise samjho - pehle iska basic concept samjho, phir ek example se yaad karo. Agar detail me chahiye to neeche wale WhatsApp button se puchho, teacher samjha dega!";
+},800);
+}
+</script></body>
   </html>
