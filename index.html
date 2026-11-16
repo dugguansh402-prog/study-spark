@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Spark - Free Doubt Solving</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f6f7ff;color:#222}
+header{background:#6C5CE7;color:white;padding:20px;text-align:center}
+header h1{font-size:32px}
+header p{margin-top:8px;opacity:0.9}
+.badge{display:inline-block;background:#FFD93D;color:#000;padding:6px 14px;border-radius:20px;font-weight:bold;margin-top:12px;font-size:14px}
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:white;padding:20px;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,0.08);margin-bottom:20px;text-align:center}
+.card h2{margin-bottom:10px;color:#6C5CE7}
+.card p{line-height:1.6;color:#555}
+.btn{display:inline-block;background:#00B894;color:white;padding:14px 26px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:18px;margin-top:12px}
+.btn2{background:#6C5CE7}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.sub{background:#f0efff;padding:15px;border-radius:12px;font-weight:bold}
+.sub span{display:block;font-weight:normal;font-size:13px;color:#666;margin-top:4px}
+.price{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.price-box{flex:1;min-width:220px;background:white;border:2px solid #eee;padding:20px;border-radius:16px}
+.price-box.pro{border-color:#6C5CE7;background:#f3f0ff}
+.price-box h3{margin-bottom:8px}
+.price-box ul{list-style:none;text-align:left;margin:12px 0;line-height:1.8;color:#444}
+footer{text-align:center;padding:20px;color:#888;font-size:13px}
+input,textarea,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;font-size:15px}
+</style>
+</head>
+<body>
+<header>
+<h1>⚡ Study Spark</h1>
+<p>Free Doubt Solving Learning Platform | Ask, Learn, Succeed.</p>
+<div class="badge">✅ 100% FREE • Roz ke 10 Doubt FREE</div>
+</header>
+
+<div class="container">
+<div class="card">
+<h2>Apna Doubt Pucho, Free Me!</h2>
+<p>Class 6 se 12 tak - Maths, Science, English, Hindi, SST, Computer. <br>Roz ke <b>10 doubt bilkul free</b>. Photo bhej ke bhi puch sakte ho.</p>
+<a class="btn" href="https://wa.me/919999999999?text=Hi%20Study%20Spark!%20Mujhe%20doubt%20puchna%20hai">📚 WhatsApp Pe Doubt Pucho</a>
+<p style="font-size:13px;margin-top:10px;">Button dabate hi WhatsApp khulega. Wahan apna doubt likh do.</p>
+</div>
+
+<div class="card">
+<h2>Subjects</h2>
+<div class="grid">
+<div class="sub">📐 Maths<span>Class 6 - 12</span></div>
+<div class="sub">🔬 Science<span>Physics, Chem, Bio</span></div>
+<div class="sub">📖 English<span>Grammar + Literature</span></div>
+<div class="sub">🇮🇳 Hindi<span>Vyakaran + Sahitya</span></div>
+<div class="sub">🌍 SST<span>History, Geo, Civics</span></div>
+<div class="sub">💻 Computer<span>Basic + Coding</span></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Apna Doubt Yahan Likho</h2>
+<form onsubmit="sendDoubt(event)">
+<select id="cls"><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select>
+<select id="sub"><option>Maths</option><option>Science</option><option>English</option><option>Hindi</option><option>SST</option><option>Computer</option></select>
+<textarea id="doubt" rows="4" placeholder="Apna doubt yahan likho... Example: Pythagoras theorem kya hota hai?" required></textarea>
+<button class="btn btn2" type="submit" style="border:none;width:100%;cursor:pointer;">Doubt Bhejo →</button>
+</form>
+<p id="msg" style="margin-top:10px;color:green;font-weight:bold;"></p>
+</div>
+
+<h2 style="text-align:center;margin:10px 0 15px;">Pricing - Simple & Sasta</h2>
+<div class="price">
+<div class="price-box">
+<h3>🆓 FREE - ₹0</h3>
+<p><b>Hamesha Free</b></p>
+<ul><li>✅ Roz ke 10 Doubt</li><li>✅ 24 Ghante me Jawab</li><li>✅ Sabhi Subjects</li><li>✅ Photo se Doubt</li></ul>
+<a class="btn" href="https://wa.me/919999999999?text=Hi!%20Mujhe%20FREE%20plan%20chahiye">FREE Start Karo</a>
+</div>
+<div class="price-box pro">
+<h3>⚡ PRO - ₹99 / Mahina</h3>
+<p><b>Baad me aayega</b></p>
+<ul><li>✅ Unlimited Doubt</li><li>✅ 10 Minute me Fast Jawab</li><li>✅ Notes + Test Paper Free</li><li>✅ Topper Batch Access</li></ul>
+<a class="btn btn2" href="#">Jaldi Aayega - Wait Karo</a>
+</div>
+</div>
+
+</div>
+<footer>© 2026 Study Spark • Made with ❤️ for Students in India</footer>
+
+<script>
+function sendDoubt(e){
+e.preventDefault();
+var c=document.getElementById('cls').value;
+var s=document.getElementById('sub').value;
+var d=document.getElementById('doubt').value;
+var text="Hi Study Spark!%0AClass: "+c+"%0ASubject: "+s+"%0ADoubt: "+encodeURIComponent(d);
+window.open("https://wa.me/919999999999?text="+text,"_blank");
+document.getElementById('msg').innerText="✅ Doubt ready hai! WhatsApp khul gaya hoga, wahan Send daba do.";
+}
+</script>
+</body>
+  </html>
